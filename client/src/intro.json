@@ -1,0 +1,20 @@
+[
+    {
+        "name" : "Photos and Updates",
+        "image": "./images/SPU.png",
+        "bold": "See photos and updates ",
+        "reg": "from friends in News Feed"
+    },
+    {
+        "name" : "Share",
+        "image": "./images/SWN.png",
+        "bold": "Share what's new ",
+        "reg": "in your life on your Timeline"
+    },
+    {
+        "name" : "Search",
+        "image": "./images/FM.png",
+        "bold": "Find More ",
+        "reg": "of what you are looking for with FaKebook Search"
+    }
+]
