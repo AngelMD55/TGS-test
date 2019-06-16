@@ -3,7 +3,7 @@ import React from "react";
 
 function SignUp(props) {
     return (
-        <div className="text-center" style={{ marginTop: "100px", maring: "0px", padding: "0px" }}>
+        <div className="text-center" style={{ marginTop: "40px", maring: "0px", padding: "0px" }}>
             <h1>Create a New Account</h1>
             <form className="p-2">
                 <input

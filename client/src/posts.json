@@ -1,0 +1,13 @@
+[
+    {
+        "userImage" : "./images/Capture.PNG",
+        "userName": "John Smith",
+        "date" : "26 April",
+        "subject": "Yellow status image out first post ever",
+        "postImage" : "./images/waves.jpg",
+        "altImage": "Japanese Waves",
+        "reacted" : "Nguyen Thanh Mai, Johnny Hernandez, Guzman E and 186 others like this.",
+        "timesShared": "24",
+        "numberOfComments": "9"
+    }
+]

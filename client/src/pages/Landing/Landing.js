@@ -11,7 +11,8 @@ class Landing extends Component {
         lastName: "",
         email: "",
         password: "",
-        introInfo
+        introInfo,
+        user: {}
     }
 
     signUpOnClick = (firstName, lastName, email, password) => {
@@ -41,14 +42,13 @@ class Landing extends Component {
 
     render() {
         return (
-            <div className="row justify-content-around" style={{ margin: "0px", padding: "20px 0px", backgroundColor: "#edf0f5" }}>
-                <div className="col-md-6 col=lg-6 pl-0" style={{ display: "inline-block" }} >
+            <div className="row justify-content-around" style={{ margin: "0px 0px 0px 30px", padding: "20px 0px", backgroundColor: "#edf0f5",   height: "88vh"}}>
+                <div className="col-md-6 col-lg-6" style={{ display: "inline-block", paddingLeft:"118px" }} >
                     <h2 style={{ padding: "42px 0px 24px" }}>
                         Connect with friends and the
                     <br />
                         world around you on Fakebook.
                     </h2>
-
                     {this.state.introInfo.map(introinfo => (
                         <Intro
                             key = {introinfo.name}
@@ -68,12 +68,10 @@ class Landing extends Component {
                         handleInputChange={this.handleInputChange}
                         signUpOnClick={this.signUpOnClick}
                     />
-
                 </div>
-
             </div>
         );
     };
 };
 
-export default Landing;
+export default (Landing);

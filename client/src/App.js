@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Landing from  "./pages/Landing/Landing";
+import Landing from "./pages/Landing/Landing";
+import Profile from "./pages/Profile/Profile";
 import NoMatch from "./pages/NoMatch/NoMatch";
 import API from "./utils/API";
 import axios from "axios";
@@ -50,6 +51,12 @@ class App extends Component {
           });
         }
       })
+      .then(() => {
+        this.setState({
+          email: "",
+          password: ""
+        });
+      })
       .catch(err => console.log(err));
   };
 
@@ -61,7 +68,7 @@ class App extends Component {
           user: {},
           loggedIn: false
         });
-        window.location.reload();
+        this.props.history.push('/');
       })
       .catch(err => {
         console.log(err)
@@ -85,8 +92,8 @@ class App extends Component {
           />
         </div>
         <Switch>
-          <Route exact path ="/" component={Landing} />
-          <Route component ={NoMatch} /> */}
+          <Route exact path="/" render={(props) => <Landing {...props} />} />
+          <Route component={NoMatch} />
         </Switch>
       </Router>
     );
