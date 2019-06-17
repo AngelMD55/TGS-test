@@ -1,3 +1,11 @@
 li{
     padding-top: 3px;
+    color: black;
+    text-decoration: none;
+}
+
+.noDecor{
+    padding: 0;
+    border: none;
+    background: none;
 }

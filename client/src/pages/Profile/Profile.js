@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import Capture from "./Capture.PNG";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import Post from "../../components/Post/Post";
@@ -17,7 +18,7 @@ class Profile extends Component {
         loggedIn: false
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.updateUser();
     };
 
@@ -50,16 +51,29 @@ class Profile extends Component {
                         <span style={{ fontSize: "12px" }}>@{this.state.user.lastName + this.state.user.firstName}</span>
                     </div>
                     <div>
+                        {/* <ul style={{ listStyleType: "none", padding: "5px" }}>
+                            <li className="list-group-item-light">
+                            <Link to="/">Home</Link></li>
+                            <li><Link to="/">About</Link></li>
+                            <li><Link to="/">Photos</Link></li>
+                            <li><Link to="/">Events</Link></li>
+                            <li><Link to="/">Welcome</Link></li>
+                            <li><Link to="/">Videos</Link></li>
+                            <li><Link to="/">Post</Link></li>
+                            <li><Link to="/">Community</Link></li>
+                            <li><Link to="/">Info and ads</Link></li>
+                        </ul> */}
                         <ul style={{ listStyleType: "none", padding: "5px" }}>
-                            <li className="list-group-item-light">Home</li>
-                            <li>About</li>
-                            <li>Photos</li>
-                            <li>Events</li>
-                            <li>Welcome</li>
-                            <li>Videos</li>
-                            <li>Posts</li>
-                            <li>Community</li>
-                            <li>Info and ads</li>
+                            <li className="list-group-item-light">
+                            <button className="noDecor" >Home</button></li>
+                            <li><button className="noDecor">About</button></li>
+                            <li><button className="noDecor">Photos</button></li>
+                            <li><button className="noDecor">Events</button></li>
+                            <li><button className="noDecor">Welcome</button></li>
+                            <li><button className="noDecor">Videos</button></li>
+                            <li><button className="noDecor">Post</button></li>
+                            <li><button className="noDecor">Community</button></li>
+                            <li><button className="noDecor">Info and ads</button></li>
                         </ul>
                     </div>
                     <div>
