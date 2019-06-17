@@ -16,9 +16,9 @@ class Landing extends Component {
         user: {}
     }
 
-    componentDidMount(){
-        this.props.updateUser()
-    }
+    // componentDidMount(){
+    //     this.props.updateUser()
+    // }
 
     signUpOnClick = (firstName, lastName, email, password) => {
         API.createUser({

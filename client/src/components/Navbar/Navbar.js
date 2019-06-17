@@ -9,13 +9,9 @@ export default function Navbar(props) {
             </div>
             {(props.loggedIn) ?
                 <div>
-                    <div>
-                        {/* <h3>Welcome {props.user.firstName}</h3> */}
-                    </div>            
-                    <div>
-                        <button className="btn btn-danger" style={{ float: "right", marginLeft: "30px" }} onClick={props.logoutOnClick}>Log Out</button>
-                    </div>
-                </div> :
+                    <button className="btn btn-danger" style={{ float: "right", marginLeft: "30px" }} onClick={props.logoutOnClick}>Log Out</button>
+                </div>
+                :
                 <div className="nav justify-content-end ">
                     <Navlogin
                         email={props.email}

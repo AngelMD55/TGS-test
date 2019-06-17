@@ -5,7 +5,14 @@ function SignUp(props) {
     return (
         <div className="text-center" style={{ marginTop: "40px", maring: "0px", padding: "0px" }}>
             <h1>Create a New Account</h1>
-            <form className="p-2">
+            <form className="p-2" onSubmit={() =>
+                props.signUpOnClick(
+                    props.firstName,
+                    props.lastName,
+                    props.email,
+                    props.password
+                )
+            }>
                 <input
                     className="col-md-6 m-1"
                     value={props.firstName}
@@ -49,16 +56,8 @@ function SignUp(props) {
                     </div> : null}
 
                     <button
-                        type="button"
+                        type="submit"
                         className="btn btn-success mt-2"
-                        onClick={() =>
-                            props.signUpOnClick(
-                                props.firstName,
-                                props.lastName,
-                                props.email,
-                                props.password
-                            )
-                        }
                     >
                         Sign Up
                         </button>

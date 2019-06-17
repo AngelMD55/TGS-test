@@ -68,7 +68,6 @@ class App extends Component {
           user: {},
           loggedIn: false
         });
-        this.props.history.push('/');
       })
       .catch(err => {
         console.log(err)

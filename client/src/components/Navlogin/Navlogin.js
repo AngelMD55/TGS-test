@@ -12,6 +12,7 @@ export default function Navlogin(props) {
                         onChange = {props.handleInputChange}
                         name="email"
                         placeholder="Email"
+                        required
                     />
                 </div>
                 <div>
@@ -22,6 +23,7 @@ export default function Navlogin(props) {
                         onChange={props.handleInputChange}
                         name="password"
                         placeholder="Password"
+                        required
                     />
                 </div>
                 <div className="form-group">
