@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
 import SignUp from "../../components/Signup/Signup";
 import API from "../../utils/API";
 import introInfo from "../../intro.json";
@@ -13,6 +14,10 @@ class Landing extends Component {
         password: "",
         introInfo,
         user: {}
+    }
+
+    componentDidMount(){
+        this.props.updateUser()
     }
 
     signUpOnClick = (firstName, lastName, email, password) => {
@@ -74,4 +79,4 @@ class Landing extends Component {
     };
 };
 
-export default (Landing);
+export default withRouter(Landing);

@@ -5,7 +5,7 @@ export default {
         return axios.post("/auth/register", userData)
     },
     getCurrentUser: function(){
-        return axios.get("/api/allUsers/currentUser", {
+        return axios.get("/api/users/currentUser", {
             headers:{
                 Authorization: localStorage.getItem("jwtToken")
             }

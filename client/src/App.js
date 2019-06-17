@@ -92,7 +92,12 @@ class App extends Component {
           />
         </div>
         <Switch>
-          <Route exact path="/" render={(props) => <Landing {...props} />} />
+          <Route exact path="/" render={(props) => (
+            this.state.loggedIn ? (<Profile updateUser={this.updateUser} {...props} />) :
+              (
+                <Landing updateUser={this.updateUser} {...props}/>
+              )
+          )} />
           <Route component={NoMatch} />
         </Switch>
       </Router>

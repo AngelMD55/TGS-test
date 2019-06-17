@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router';
 import Capture from "./Capture.PNG";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import Post from "../../components/Post/Post";
 import posts from "../../posts.json";
 import "./style.css";
+import API from "../../utils/API";
 
 // import API from "../../utils/API";
 
@@ -12,8 +12,25 @@ import "./style.css";
 class Profile extends Component {
 
     state = {
-        posts
+        posts,
+        user: {},
+        loggedIn: false
     }
+
+    componentDidMount(){
+        this.updateUser();
+    };
+
+    updateUser = () => {
+        API.getCurrentUser()
+            .then((res) => {
+                this.setState({
+                    user: res.data.user,
+                    loggedIn: true
+                })
+            })
+            .catch(err => { console.log(err) });
+    };
 
 
     render() {
@@ -24,13 +41,13 @@ class Profile extends Component {
                         <img src={Capture} alt="user" />
                     </div>
                     <div style={{ marginTop: "8px" }}>
-                        <span style={{fontWeight:"bold"}}>Page </span>
-                        <span style={{fontWeight:"bold"}}> Name </span>
-                        <span style={{color:"#4040ff"}}> 
+                        <span style={{ fontWeight: "bold" }}> {this.state.user.firstName} </span>
+                        <span style={{ fontWeight: "bold" }}> {this.state.user.lastName} </span>
+                        <span style={{ color: "#4040ff" }}>
                             <i className="fas fa-check-circle"></i>
                         </span>
                         <br />
-                        <span style={{fontSize:"12px"}}>@LastNameFirstName</span>
+                        <span style={{ fontSize: "12px" }}>@{this.state.user.lastName + this.state.user.firstName}</span>
                     </div>
                     <div>
                         <ul style={{ listStyleType: "none", padding: "5px" }}>
@@ -90,4 +107,4 @@ class Profile extends Component {
     };
 };
 
-export default withRouter(Profile);
+export default (Profile);
